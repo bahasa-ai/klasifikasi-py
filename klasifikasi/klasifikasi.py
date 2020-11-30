@@ -1,4 +1,5 @@
 import requests
+
 from ._klasifikasi_model import KlasifikasiModel
 from ._settings import BASE_URL
 
