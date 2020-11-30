@@ -7,7 +7,7 @@ class KlasifikasiModel():
     self.client_id = client_id
     self.client_secret = client_secret
     self.__token, self.__expired_after = self.request_token()
-    self.name, self.tag = self.request_model_data()
+    self.public_id, self.name, self.tag = self.request_model_data()
   
   
   
@@ -45,7 +45,7 @@ class KlasifikasiModel():
         'description_weight': data.get('description_weight')
       })
 
-    return model.get('name'), tags
+    return model.get('publicId'), model.get('name'), tags
     
-  def get_token():
+  def get_token(self):
     return self.__token
