@@ -1,1 +1,1 @@
-from .klasifikasi import *
+from .klasifikasi import Klasifikasi
