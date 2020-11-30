@@ -1,3 +1,3 @@
 class Klasifikasi:
-  def __init__(self):
-    print('Hello world')
+    def __init__(self):
+        print('Hello world')
