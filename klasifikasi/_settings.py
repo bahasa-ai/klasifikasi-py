@@ -1,1 +1,1 @@
-BASE_URL = 'https://api.klasifikasi.com'
+BASE_URL = "https://api.klasifikasi.com"
