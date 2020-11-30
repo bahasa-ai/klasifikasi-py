@@ -13,18 +13,14 @@ class Klasifikasi:
 
         self.__model_mapping = {}
         for data in creds:
-            if (
-                not isinstance(data, dict)
-                or data.get("client_id") is None
-                or data.get("client_secret") is None
-            ):
+            if (not isinstance(data, dict) or data.get("client_id") is None
+                    or data.get("client_secret") is None):
                 raise Exception(
                     "Creds must be a list of dict contain client_id & client_secret"
                 )
 
-            model = KlasifikasiModel(
-                data.get("client_id"), data.get("client_secret"), url
-            )
+            model = KlasifikasiModel(data.get("client_id"),
+                                     data.get("client_secret"), url)
             self.__model_mapping[model.public_id] = model
 
         self.url = url
