@@ -9,7 +9,7 @@ class KlasifikasiModel:
         self.__token, expired_after = self.request_token()
         self.__expired_after = arrow.get(expired_after)
         self.public_id, self.name, self.tag = self.request_model_data()
-        
+
     def request_token(self):
         payload = {
             "clientId": self.client_id,
