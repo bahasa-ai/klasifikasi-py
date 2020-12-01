@@ -12,8 +12,12 @@ class KlasifikasiModel:
         self.public_id, self.name, self.tag = self.request_model_data()
 
     def request_token(self):
-        payload = {"clientId": self.client_id, "clientSecret": self.client_secret}
-        response = requests.post("{}/api/v1/auth/token".format(self.url), json=payload)
+        payload = {
+            "clientId": self.client_id,
+            "clientSecret": self.client_secret
+        }
+        response = requests.post("{}/api/v1/auth/token".format(self.url),
+                                 json=payload)
         response_json = response.json()
         auth = response_json.get("auth")
 
@@ -27,9 +31,8 @@ class KlasifikasiModel:
 
     def request_model_data(self):
         headers = {"Authorization": "Bearer {}".format(self.__token)}
-        response = requests.get(
-            "{}/api/v1/auth/activeClient".format(self.url), headers=headers
-        )
+        response = requests.get("{}/api/v1/auth/activeClient".format(self.url),
+                                headers=headers)
         response_json = response.json()
         model = response_json.get("model")
 
@@ -41,13 +44,11 @@ class KlasifikasiModel:
 
         tags = []
         for data in model.get("tags"):
-            tags.append(
-                {
-                    "name": data.get("name"),
-                    "description": data.get("description"),
-                    "description_weight": data.get("description_weight"),
-                }
-            )
+            tags.append({
+                "name": data.get("name"),
+                "description": data.get("description"),
+                "description_weight": data.get("description_weight"),
+            })
 
         return model.get("publicId"), model.get("name"), tags
 
