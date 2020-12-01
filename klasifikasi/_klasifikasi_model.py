@@ -1,5 +1,5 @@
-import requests
 import arrow
+import requests
 
 
 class KlasifikasiModel:
