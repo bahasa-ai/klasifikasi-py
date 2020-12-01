@@ -1,6 +1,7 @@
 import requests
 import arrow
 
+
 class KlasifikasiModel:
     def __init__(self, client_id, client_secret, url):
         self.url = url
@@ -52,7 +53,7 @@ class KlasifikasiModel:
         return model.get("publicId"), model.get("name"), tags
 
     def get_token(self):
-      if self.__expired_after < arrow.utcnow():
-        self.__token, expired_after = self.request_token()
-        self.__expired_after = arrow.get(expired_after)
-      return self.__token
+        if self.__expired_after < arrow.utcnow():
+            self.__token, expired_after = self.request_token()
+            self.__expired_after = arrow.get(expired_after)
+        return self.__token
