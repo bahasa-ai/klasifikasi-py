@@ -3,10 +3,14 @@
 Official [Klasifikasi](https://klasifikasi.com/) API Client Library
 
 ## Installation
+
 `pip install klasifikasi-py`
 
 ## Quick start
-You will need valid `clientId` & `clientSecret` of your model. You can get those from credential section at your model page, which is both unique per model
+
+You will need valid `clientId` & `clientSecret` of your model. You can get those
+from credential section at your model page, which is both unique per model
+
 ```python
 from klasifikasi import Klasifikasi
 
@@ -17,7 +21,9 @@ klasifikasi_instance = Klasifikasi(creds=[
   }
 ])
 ```
+
 You can pass multiple `clientId` & `clientSecret` too
+
 ```python
 from klasifikasi import Klasifikasi
 
@@ -34,20 +40,26 @@ klasifikasi_instance = Klasifikasi(creds=[
 ```
 
 ## Classify
-You need your model `publicId` to start classifying. You can get those from your model page, or
-you get get it from here :
+
+You need your model `publicId` to start classifying. You can get those from your
+model page, or you get get it from here :
+
 ```python
 models = klasifikasi_instance.get_models()
 for publicId in models:
   print(publicId)
 ```
+
 Classifying example :
+
 ```python
 result = klasifikasi_instance.classify('publicId', 'query')
 ```
 
 ## Logs
+
 You can get your classifying logs based on your model `publicId`
+
 ```python
 logs = klasifikasi_instance.classify('publicId', {
   'started_at': '1 December 2020',
@@ -56,8 +68,10 @@ logs = klasifikasi_instance.classify('publicId', {
   'take': 10
 })
 ```
+
 `ended_at` & `started_at` parameter is mandatory, the rest is optional
 
 ## Error
-All the function above will throw an Exception if something bad happen. Always run each function
-inside `try` & `except` block
+
+All the function above will throw an Exception if something bad happen. Always
+run each function inside `try` & `except` block
