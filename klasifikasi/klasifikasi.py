@@ -1,5 +1,6 @@
-import requests
 import urllib
+
+import requests
 from dateutil import parser
 
 from ._klasifikasi_model import KlasifikasiModel
