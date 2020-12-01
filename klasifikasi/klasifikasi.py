@@ -3,6 +3,7 @@ from dateutil import parser
 from ._klasifikasi_model import KlasifikasiModel
 from ._settings import BASE_URL
 
+
 class Klasifikasi:
   def __init__(self, creds, url = BASE_URL):
     if (not isinstance(creds, list)):
