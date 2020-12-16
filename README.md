@@ -2,6 +2,10 @@
 
 Official [Klasifikasi](https://klasifikasi.com/) API Client Library
 
+## Requirement
+
+Python 3.7 or later
+
 ## Installation
 
 `pip install klasifikasi-py`
